@@ -1,0 +1,25 @@
+{
+	"name": "TR_EventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_EventOut_CPY",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/eventinput/blobs/Data",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/45413cd4-ff80-42a9-b512-a9434ce8c869/resourceGroups/az25rgdevelopment/providers/Microsoft.Storage/storageAccounts/az25adlsstoragebulkload",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
