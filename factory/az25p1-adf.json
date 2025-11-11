@@ -1,0 +1,9 @@
+{
+	"name": "az25p1-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f54441a3-25c9-433a-b0ca-3e26f241c9ae",
+		"tenantId": "a19ad733-820d-4810-beeb-b3cebfb05a5e"
+	}
+}
