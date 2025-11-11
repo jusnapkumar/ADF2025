@@ -1,0 +1,78 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "az25d1-adf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"LSAzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"LS_CSV_BulkLoad_accountKey": {
+			"value": ""
+		},
+		"LS_DATAVIEW_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_PARQUEUE_accountKey": {
+			"value": ""
+		},
+		"LS_EventTarget_accountKey": {
+			"value": ""
+		},
+		"LS_Event_Input_accountKey": {
+			"value": ""
+		},
+		"LS_OnPrem_SQL_password": {
+			"value": ""
+		},
+		"LS_Parqeue_Sink_accountKey": {
+			"value": ""
+		},
+		"avroAzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_BulkLoad_properties_typeProperties_url": {
+			"value": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_DATAVIEW_properties_typeProperties_url": {
+			"value": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUEUE_properties_typeProperties_url": {
+			"value": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_EventTarget_properties_typeProperties_url": {
+			"value": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"LS_Event_Input_properties_typeProperties_url": {
+			"value": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_server": {
+			"value": "LAPTOP-INMOEQCN\\AZ25MSSQLSERVER"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_Parqeue_Sink_properties_typeProperties_url": {
+			"value": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"avroAzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"TR_EventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/45413cd4-ff80-42a9-b512-a9434ce8c869/resourceGroups/az25rgdevelopment/providers/Microsoft.Storage/storageAccounts/az25adlsstoragebulkload"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

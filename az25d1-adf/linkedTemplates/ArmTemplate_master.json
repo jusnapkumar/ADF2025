@@ -1,0 +1,189 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "az25d1-adf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"LSAzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSAzureBlobStorage1'"
+		},
+		"LS_CSV_BulkLoad_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_BulkLoad'"
+		},
+		"LS_DATAVIEW_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DATAVIEW'"
+		},
+		"LS_EXCEL_PARQUEUE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUEUE'"
+		},
+		"LS_EventTarget_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EventTarget'"
+		},
+		"LS_Event_Input_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Event_Input'"
+		},
+		"LS_OnPrem_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_OnPrem_SQL'"
+		},
+		"LS_Parqeue_Sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Parqeue_Sink'"
+		},
+		"avroAzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'avroAzureDataLakeStorage1'"
+		},
+		"LS_CSV_BulkLoad_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_DATAVIEW_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUEUE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_EventTarget_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"LS_Event_Input_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25adlsstoragebulkload.dfs.core.windows.net/"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "LAPTOP-INMOEQCN\\AZ25MSSQLSERVER"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"LS_OnPrem_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_Parqeue_Sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"avroAzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://az25storagesink.dfs.core.windows.net/"
+		},
+		"TR_EventTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/45413cd4-ff80-42a9-b512-a9434ce8c869/resourceGroups/az25rgdevelopment/providers/Microsoft.Storage/storageAccounts/az25adlsstoragebulkload"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "az25d1-adf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"LSAzureBlobStorage1_connectionString": {
+						"value": "[parameters('LSAzureBlobStorage1_connectionString')]"
+					},
+					"LS_CSV_BulkLoad_accountKey": {
+						"value": "[parameters('LS_CSV_BulkLoad_accountKey')]"
+					},
+					"LS_DATAVIEW_accountKey": {
+						"value": "[parameters('LS_DATAVIEW_accountKey')]"
+					},
+					"LS_EXCEL_PARQUEUE_accountKey": {
+						"value": "[parameters('LS_EXCEL_PARQUEUE_accountKey')]"
+					},
+					"LS_EventTarget_accountKey": {
+						"value": "[parameters('LS_EventTarget_accountKey')]"
+					},
+					"LS_Event_Input_accountKey": {
+						"value": "[parameters('LS_Event_Input_accountKey')]"
+					},
+					"LS_Parqeue_Sink_accountKey": {
+						"value": "[parameters('LS_Parqeue_Sink_accountKey')]"
+					},
+					"avroAzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('avroAzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_OnPrem_SQL_password": {
+						"value": "[parameters('LS_OnPrem_SQL_password')]"
+					},
+					"LS_CSV_BulkLoad_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_BulkLoad_properties_typeProperties_url')]"
+					},
+					"LS_DATAVIEW_properties_typeProperties_url": {
+						"value": "[parameters('LS_DATAVIEW_properties_typeProperties_url')]"
+					},
+					"LS_EXCEL_PARQUEUE_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_PARQUEUE_properties_typeProperties_url')]"
+					},
+					"LS_EventTarget_properties_typeProperties_url": {
+						"value": "[parameters('LS_EventTarget_properties_typeProperties_url')]"
+					},
+					"LS_Event_Input_properties_typeProperties_url": {
+						"value": "[parameters('LS_Event_Input_properties_typeProperties_url')]"
+					},
+					"LS_Parqeue_Sink_properties_typeProperties_url": {
+						"value": "[parameters('LS_Parqeue_Sink_properties_typeProperties_url')]"
+					},
+					"avroAzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('avroAzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_OnPrem_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_OnPrem_SQL_properties_typeProperties_server')]"
+					},
+					"LS_OnPrem_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_OnPrem_SQL_properties_typeProperties_database')]"
+					},
+					"LS_OnPrem_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_OnPrem_SQL_properties_typeProperties_userName')]"
+					},
+					"TR_EventTrigger_properties_typeProperties_scope": {
+						"value": "[parameters('TR_EventTrigger_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
